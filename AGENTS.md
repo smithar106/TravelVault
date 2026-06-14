@@ -42,16 +42,26 @@ npx expo start --ios # iOS simulator
 npx tsc --noEmit     # Type-check
 ```
 
-### Website (`website/` — repo: `smithar106/TravelVault-Site`)
+### Website (repo: `smithar106/TravelVault-Site`)
+
+Next.js 14 App Router + TypeScript + Tailwind CSS + Framer Motion. Deployed to Vercel.
+
 ```bash
-cd website
+cd TravelVault-Site
 npm install          # Install deps
 npm run dev          # Start Next.js dev server (port 3000)
-npm run build        # Production build
+npm run build        # Production build (7 static routes)
 npm run lint         # ESLint
 npx tsc --noEmit     # Type-check
 ```
-Deployed to Vercel. Push to `main` triggers auto-deploy.
+
+**Routes**: `/` `/features` `/pricing` `/faq` `/privacy` `/terms`
+
+**Homepage sections**: Hero (animated phone mockup) → VsTripIt (comparison table) → Problem (3 pain cards) → HowItWorks (3-step flow) → Features (2x3 grid) → Testimonials (navy bg) → Pricing (toggle) → FAQ (accordion) → FinalCTA (app store badges)
+
+**Key env vars**: `NEXT_PUBLIC_QUIZ_URL` `NEXT_PUBLIC_APP_STORE_URL` `NEXT_PUBLIC_PLAY_STORE_URL`
+
+**Colors**: Teal `#0D6B6B`, Sand `#F5A623`, Navy `#1A1A2E`, Offwhite `#FAFAFA`
 
 ### Supabase
 ```bash
