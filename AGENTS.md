@@ -1,11 +1,24 @@
 # TravelVault — Agent Guidelines
 
 ## Project Layout
+
+### App Repo (`smithar106/TravelVault`)
 ```
 /
 ├── api/       # Railway Node.js/Express backend (TypeScript)
 ├── app/       # React Native Expo frontend (TypeScript)
 └── supabase/  # Database schema migration SQL
+```
+
+### Website Repo (`smithar106/TravelVault-Site`)
+```
+/
+├── app/            # Next.js 14 App Router pages
+├── components/     # Shared UI + section components
+│   ├── sections/   # Hero, VsTripIt, Problem, HowItWorks, etc.
+│   └── ui/         # Reusable UI primitives
+├── public/         # Static assets
+└── package.json
 ```
 
 ## Commands
@@ -28,6 +41,17 @@ npx expo start       # Start Expo dev server
 npx expo start --ios # iOS simulator
 npx tsc --noEmit     # Type-check
 ```
+
+### Website (`website/` — repo: `smithar106/TravelVault-Site`)
+```bash
+cd website
+npm install          # Install deps
+npm run dev          # Start Next.js dev server (port 3000)
+npm run build        # Production build
+npm run lint         # ESLint
+npx tsc --noEmit     # Type-check
+```
+Deployed to Vercel. Push to `main` triggers auto-deploy.
 
 ### Supabase
 ```bash
