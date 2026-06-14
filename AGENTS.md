@@ -21,6 +21,20 @@
 └── package.json
 ```
 
+### Quiz Repo (`smithar106/TravelVault-Quiz`)
+```
+/
+├── app/
+│   ├── page.tsx           # Renders QuizShell
+│   ├── layout.tsx         # Root layout + metadata
+│   └── api/submit/route.ts # POST endpoint → Railway API
+├── components/
+│   ├── QuizShell.tsx      # State machine, transitions, progress bar
+│   ├── steps/             # 9 step components (Hook → Email)
+│   └── lib/supabase.ts    # Lazy Supabase client
+└── package.json
+```
+
 ## Commands
 
 ### Backend (`api/`)
@@ -62,6 +76,24 @@ npx tsc --noEmit     # Type-check
 **Key env vars**: `NEXT_PUBLIC_QUIZ_URL` `NEXT_PUBLIC_APP_STORE_URL` `NEXT_PUBLIC_PLAY_STORE_URL`
 
 **Colors**: Teal `#0D6B6B`, Sand `#F5A623`, Navy `#1A1A2E`, Offwhite `#FAFAFA`
+
+### Quiz (repo: `smithar106/TravelVault-Quiz`)
+
+Next.js 14 + Framer Motion slide transitions + Supabase quiz_leads. Deployed to Vercel.
+
+```bash
+cd TravelVault-Quiz
+npm install          # Install deps
+npm run dev          # Start dev server (port 3000)
+npm run build        # Production build (3 routes)
+npx tsc --noEmit     # Type-check
+```
+
+**7-step flow**: Hook (navy globe) → Interests (2x4 grid) → Pace (auto-advance) → Accommodation → Planning Style → Pain Point → Analyzing → Archetype reveal → Email capture → Supabase save → App Store redirect
+
+**Archetypes**: Food Explorer, Culture Seeker, Adventure Sprinter, Luxury Traveler, Discoverer, Sun Chaser, Night Owl, Rejuvenator, Savvy Explorer, Curious Wanderer
+
+**Key env vars**: `NEXT_PUBLIC_SUPABASE_URL` `NEXT_PUBLIC_SUPABASE_ANON_KEY` `TRAVELVAULT_API_URL` `NEXT_PUBLIC_APP_STORE_URL`
 
 ### Supabase
 ```bash
